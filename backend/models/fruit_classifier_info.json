@@ -1,0 +1,20 @@
+{
+  "classes": [
+    "Apple",
+    "Banana",
+    "Cherry",
+    "Grape",
+    "Guava",
+    "Kiwi",
+    "Mango",
+    "Orange",
+    "Peach",
+    "Pear",
+    "Strawberry"
+  ],
+  "num_classes": 11,
+  "image_size": 100,
+  "trained_date": "2026-02-10 14:35:53",
+  "architecture": "CNN",
+  "type": "Demo Model (Synthetic Data)"
+}

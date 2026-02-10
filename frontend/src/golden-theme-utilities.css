@@ -1,0 +1,489 @@
+/* 
+ * Golden Theme - Reusable Utility Classes
+ * Add these classes to any element for instant golden theme styling
+ */
+
+/* ==================== TEXT STYLES ==================== */
+
+.gold-text {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 6px rgba(255, 215, 0, 0.4));
+}
+
+.gold-text-animated {
+  background: linear-gradient(135deg, 
+    #FFD700 0%, 
+    #FFA500 25%, 
+    #FFEB3B 50%, 
+    #FFA500 75%, 
+    #FFD700 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmerText 3s ease-in-out infinite;
+  filter: drop-shadow(0 3px 8px rgba(255, 215, 0, 0.5));
+}
+
+@keyframes shimmerText {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 200% center; }
+}
+
+/* ==================== BUTTON STYLES ==================== */
+
+.btn-gold-primary {
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFAA00 100%);
+  background-size: 200% auto;
+  color: #1a1410;
+  border: 3px solid rgba(255, 215, 0, 0.6);
+  border-radius: 60px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5),
+              0 4px 15px rgba(255, 170, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.btn-gold-primary:hover::before {
+  left: 100%;
+}
+
+.btn-gold-primary:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 50px rgba(255, 215, 0, 0.7),
+              0 8px 25px rgba(255, 170, 0, 0.5),
+              0 0 60px rgba(255, 215, 0, 0.4);
+  background-position: 100% center;
+  border-color: #FFD700;
+}
+
+.btn-gold-secondary {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 170, 0, 0.2));
+  backdrop-filter: blur(10px);
+  color: #FFD700;
+  border: 3px solid rgba(255, 215, 0, 0.4);
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold-secondary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.3), transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+  border-radius: 50%;
+}
+
+.btn-gold-secondary:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.btn-gold-secondary:hover {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(255, 170, 0, 0.3));
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5),
+              0 0 50px rgba(255, 215, 0, 0.3);
+  border-color: #FFD700;
+}
+
+/* ==================== CARD STYLES ==================== */
+
+.card-gold {
+  background: rgba(45, 36, 22, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  padding: 2.5rem;
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3),
+              inset 0 1px 0 rgba(255, 215, 0, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(255, 215, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-gold::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.15), rgba(255, 170, 0, 0.08) 70%);
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+  border-radius: 50%;
+}
+
+.card-gold:hover::before {
+  width: 600px;
+  height: 600px;
+}
+
+.card-gold:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 25px 60px rgba(255, 215, 0, 0.4),
+              0 15px 40px rgba(255, 170, 0, 0.3),
+              0 0 80px rgba(255, 215, 0, 0.2),
+              inset 0 1px 0 rgba(255, 215, 0, 0.3);
+  border: 2px solid rgba(255, 215, 0, 0.5);
+}
+
+body.light .card-gold {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(218, 165, 32, 0.2);
+}
+
+/* ==================== BADGE STYLES ==================== */
+
+.badge-gold {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #1a1410;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.badge-gold:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+}
+
+/* ==================== BORDER STYLES ==================== */
+
+.border-gold {
+  border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.border-gold-glow {
+  border: 2px solid rgba(255, 215, 0, 0.4);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3),
+              inset 0 0 20px rgba(255, 215, 0, 0.1);
+}
+
+.border-gold-animated {
+  border: 3px solid transparent;
+  background: 
+    linear-gradient(var(--dark-card), var(--dark-card)) padding-box,
+    linear-gradient(135deg, #FFD700, #FFA500, #FFEB3B) border-box;
+  animation: rotateBorder 3s linear infinite;
+}
+
+@keyframes rotateBorder {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* ==================== SHADOW STYLES ==================== */
+
+.shadow-gold-sm {
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+}
+
+.shadow-gold-md {
+  box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+}
+
+.shadow-gold-lg {
+  box-shadow: 0 20px 60px rgba(255, 215, 0, 0.4);
+}
+
+.shadow-gold-glow {
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.6),
+              0 0 80px rgba(255, 215, 0, 0.3);
+}
+
+/* ==================== BACKGROUND STYLES ==================== */
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+}
+
+.bg-gold-gradient-radial {
+  background: radial-gradient(circle at center, #FFD700, #FFA500);
+}
+
+.bg-gold-glass {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 170, 0, 0.15));
+  backdrop-filter: blur(15px) saturate(180%);
+}
+
+.bg-gold-shimmer {
+  background: linear-gradient(135deg,
+    rgba(255, 215, 0, 0.05),
+    rgba(255, 170, 0, 0.08),
+    rgba(255, 215, 0, 0.05));
+  background-size: 200% 200%;
+  animation: shimmerBg 4s ease-in-out infinite;
+}
+
+@keyframes shimmerBg {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ==================== ICON STYLES ==================== */
+
+.icon-gold {
+  color: #FFD700;
+  filter: drop-shadow(0 2px 6px rgba(255, 215, 0, 0.4));
+  transition: all 0.3s ease;
+}
+
+.icon-gold:hover {
+  color: #FFA500;
+  filter: drop-shadow(0 4px 12px rgba(255, 215, 0, 0.6));
+  transform: scale(1.2) rotate(15deg);
+}
+
+.icon-gold-animated {
+  color: #FFD700;
+  filter: drop-shadow(0 2px 6px rgba(255, 215, 0, 0.4));
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% { 
+    transform: scale(1); 
+    filter: drop-shadow(0 2px 6px rgba(255, 215, 0, 0.4));
+  }
+  50% { 
+    transform: scale(1.15); 
+    filter: drop-shadow(0 4px 12px rgba(255, 215, 0, 0.7));
+  }
+}
+
+/* ==================== DIVIDER STYLES ==================== */
+
+.divider-gold {
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 215, 0, 0.5), 
+    rgba(255, 170, 0, 0.5),
+    rgba(255, 215, 0, 0.5), 
+    transparent);
+  border: none;
+  margin: 2rem 0;
+}
+
+.divider-gold-animated {
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    #FFD700, 
+    #FFA500,
+    #FFD700, 
+    transparent);
+  background-size: 200% auto;
+  border: none;
+  margin: 2rem 0;
+  animation: shimmerDivider 3s ease-in-out infinite;
+}
+
+@keyframes shimmerDivider {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 200% center; }
+}
+
+/* ==================== LOADER STYLES ==================== */
+
+.loader-gold {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 215, 0, 0.2);
+  border-top-color: #FFD700;
+  border-right-color: #FFA500;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.loader-gold-dual {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(255, 215, 0, 0.15);
+  border-top-color: #FFD700;
+  border-right-color: #FFA500;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.6),
+              inset 0 0 15px rgba(255, 215, 0, 0.3);
+  position: relative;
+}
+
+.loader-gold-dual::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border: 4px solid rgba(255, 170, 0, 0.3);
+  border-bottom-color: #FFA500;
+  border-left-color: #FFD700;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 0.8s linear infinite reverse;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==================== GLOW EFFECTS ==================== */
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.8); }
+}
+
+.glow-gold-text {
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.5),
+    0 0 20px rgba(255, 215, 0, 0.3),
+    0 0 30px rgba(255, 215, 0, 0.2);
+  animation: textGlow 2s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px rgba(255, 215, 0, 0.5),
+      0 0 20px rgba(255, 215, 0, 0.3),
+      0 0 30px rgba(255, 215, 0, 0.2);
+  }
+  50% {
+    text-shadow: 
+      0 0 20px rgba(255, 215, 0, 0.8),
+      0 0 40px rgba(255, 215, 0, 0.6),
+      0 0 60px rgba(255, 215, 0, 0.4);
+  }
+}
+
+/* ==================== HOVER EFFECTS ==================== */
+
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.6),
+              0 0 60px rgba(255, 215, 0, 0.3);
+}
+
+.hover-scale {
+  transition: all 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+}
+
+/* ==================== LIGHT MODE OVERRIDES ==================== */
+
+body.light .card-gold:hover {
+  box-shadow: 0 25px 60px rgba(218, 165, 32, 0.3),
+              0 15px 40px rgba(255, 215, 0, 0.2),
+              0 0 80px rgba(255, 215, 0, 0.15);
+}
+
+body.light .btn-gold-primary {
+  color: #1a1410;
+}
+
+body.light .btn-gold-secondary {
+  color: #B8860B;
+}
+
+body.light .icon-gold {
+  color: #B8860B;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 768px) {
+  .btn-gold-primary,
+  .btn-gold-secondary {
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+  }
+
+  .card-gold {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-gold-primary,
+  .btn-gold-secondary {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+  }
+
+  .card-gold {
+    padding: 1.5rem;
+  }
+
+  .badge-gold {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+}

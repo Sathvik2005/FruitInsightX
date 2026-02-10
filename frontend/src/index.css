@@ -108,7 +108,3 @@ html {
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
   animation: float-particle 4s ease-in-out infinite;
 }
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: golden-shimmer 3s linear infinite;
-}

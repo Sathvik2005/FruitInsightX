@@ -1,11 +1,14 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
-import { FaSun, FaMoon, FaGithub } from 'react-icons/fa'
+import { FaSun, FaMoon, FaGithub, FaHome, FaInfoCircle, FaBook, FaCode, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa'
 import './Header.css'
 
 const Header = ({ theme, toggleTheme }) => {
   const headerRef = useRef(null)
   const logoRef = useRef(null)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     // Animate header on load
@@ -39,19 +42,47 @@ const Header = ({ theme, toggleTheme }) => {
     }
   }
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen)
+  }
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false)
+  }
+
   return (
     <header className="header" ref={headerRef}>
       <div className="header-content">
-        <div className="logo" ref={logoRef}>
+        <Link to="/" className="logo" ref={logoRef}>
           <span className="logo-icon">🍎</span>
-          <span className="logo-text">Fruit Classifier</span>
-        </div>
+          <span className="logo-text">FruitInsightX</span>
+        </Link>
         
-        <nav className="nav">
-          <a href="#home" className="nav-link">Home</a>
-          <a href="#classify" className="nav-link">Classify</a>
-          <a href="#features" className="nav-link">Features</a>
-          <a href="#about" className="nav-link">About</a>
+        <button className="mobile-menu-toggle" onClick={toggleMobileMenu} aria-label="Toggle menu">
+          {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+        <nav className={`nav ${mobileMenuOpen ? 'mobile-active' : ''}`}>
+          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} onClick={closeMobileMenu}>
+            <FaHome className="nav-icon" />
+            <span>Home</span>
+          </Link>
+          <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} onClick={closeMobileMenu}>
+            <FaInfoCircle className="nav-icon" />
+            <span>About</span>
+          </Link>
+          <Link to="/documentation" className={`nav-link ${location.pathname === '/documentation' ? 'active' : ''}`} onClick={closeMobileMenu}>
+            <FaBook className="nav-icon" />
+            <span>Docs</span>
+          </Link>
+          <Link to="/api" className={`nav-link ${location.pathname === '/api' ? 'active' : ''}`} onClick={closeMobileMenu}>
+            <FaCode className="nav-icon" />
+            <span>API</span>
+          </Link>
+          <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`} onClick={closeMobileMenu}>
+            <FaEnvelope className="nav-icon" />
+            <span>Contact</span>
+          </Link>
         </nav>
 
         <div className="header-actions">
@@ -63,7 +94,7 @@ const Header = ({ theme, toggleTheme }) => {
             {theme === 'light' ? <FaMoon /> : <FaSun />}
           </button>
           <a 
-            href="https://github.com" 
+            href="https://github.com/Sathvik2005/FruitInsightX" 
             target="_blank" 
             rel="noopener noreferrer"
             className="github-link"

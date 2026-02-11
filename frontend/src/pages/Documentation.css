@@ -1,0 +1,221 @@
+.documentation-page {
+  min-height: calc(100vh - 70px);
+  padding: 2rem 0 4rem;
+}
+
+.doc-hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 170, 0, 0.05));
+  margin-bottom: 3rem;
+}
+
+.doc-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 3rem;
+}
+
+.doc-sidebar {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.doc-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.doc-nav a {
+  padding: 0.8rem 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.doc-nav a:hover {
+  background: rgba(255, 215, 0, 0.1);
+  color: #FFD700;
+  transform: translateX(5px);
+}
+
+body.light .doc-nav a {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.doc-content {
+  max-width: 900px;
+}
+
+.doc-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.doc-section h2 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+}
+
+.doc-section h3 {
+  font-size: 1.5rem;
+  color: #FFD700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.doc-section h4 {
+  font-size: 1.2rem;
+  color: #FFA500;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.doc-section p {
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+}
+
+body.light .doc-section p {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.doc-section ul {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.doc-section li {
+  padding: 0.5rem 0;
+  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+}
+
+.doc-section li::before {
+  content: '▹';
+  color: #FFD700;
+  position: absolute;
+  left: -1.5rem;
+  font-weight: bold;
+}
+
+body.light .doc-section li {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.code-block {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+body.light .code-block {
+  background: rgba(255, 245, 220, 0.5);
+}
+
+.code-block code {
+  font-family: 'Courier New', monospace;
+  color: #FFD700;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+body.light .code-block code {
+  color: #B8860B;
+}
+
+.endpoint-card {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 215, 0, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.endpoint-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.http-method {
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.http-method.get {
+  background: #61affe;
+  color: #fff;
+}
+
+.http-method.post {
+  background: #49cc90;
+  color: #fff;
+}
+
+.endpoint-path {
+  font-family: 'Courier New', monospace;
+  color: #FFD700;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 968px) {
+  .doc-container {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-sidebar {
+    position: static;
+  }
+
+  .doc-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .doc-hero {
+    padding: 2rem 1rem;
+  }
+
+  .doc-container {
+    padding: 0 1rem;
+  }
+
+  .doc-section {
+    padding: 1.5rem;
+  }
+
+  .code-block {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+}
